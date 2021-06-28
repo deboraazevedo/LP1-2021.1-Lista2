@@ -16,8 +16,19 @@ namespace graal {
 template<class InputIt, class Equal>
 InputIt unique( InputIt first, InputIt last, Equal eq )
 {
-    // TODO
-    return last;
+    InputIt iterator = first;
+    InputIt iterator2 = first + 1;
+
+    while (iterator2 != last){
+        if (eq(*iterator, *iterator2)){
+            std::iter_swap(iterator2, iterator2 + 1);
+            iterator2++;
+        }
+        else if (!eq(*iterator, *iterator2)){
+            iterator2++;
+        }
+    }
+    return iterator;
 }
 
 }

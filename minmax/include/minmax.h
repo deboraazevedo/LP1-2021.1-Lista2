@@ -24,8 +24,12 @@ namespace graal {
  *
  */
 template <typename Itr, typename Compare >
+Compare cmp(const Itr &a,  const Itr &b) {
+    return a < b;
+}
 std::pair<Itr, Itr> minmax( Itr first, Itr last, Compare cmp )
 {
+
     // TODO
     return std::make_pair( first, first );
 }
